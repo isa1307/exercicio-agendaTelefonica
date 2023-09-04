@@ -1,0 +1,51 @@
+<mxfile host="65bd71144e">
+    <diagram id="JGmoz-WGfIQVpbbAymZz" name="Página-1">
+        <mxGraphModel dx="1028" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="50" width="250" height="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=none;html=1;entryX=-0.019;entryY=0.636;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="3" target="15">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="560" y="195" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="100" width="250" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Usuario" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="165" y="60" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="-nome = String&lt;br&gt;-telefone = String&lt;br&gt;-celular = String&lt;br&gt;-url= string&lt;br&gt;-data= string&lt;br&gt;-email = String&lt;br&gt;-cep = String&lt;br&gt;-cidade = String&lt;br&gt;-insta = string&lt;br&gt;-git= string&lt;br&gt;-signo= string&lt;br&gt;-id= int&lt;br&gt;-age = int" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="125" width="130" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="+generetaId():int&lt;br&gt;+getZodiacSign:string&amp;nbsp;&lt;br&gt;+calculateAge:int" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="115" y="290" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="570" y="40" width="250" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="21">
+                    <mxGeometry width="250" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="-listausuarios: [ ]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="21">
+                    <mxGeometry y="60" width="250" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&lt;div style=&quot;color: rgb(255, 255, 255); background-color: rgb(25, 24, 48); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #fb94ff;&quot;&gt;ListarTelefones&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="21">
+                    <mxGeometry x="105" y="10" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&lt;div style=&quot;color: rgb(255, 255, 255); background-color: rgb(25, 24, 48); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #9effff;&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: #fad000;&quot;&gt;getContact&lt;/span&gt;&lt;span style=&quot;color: #e1efff;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #9effff;&quot;&gt;id&lt;/span&gt;&lt;span style=&quot;color: #e1efff;&quot;&gt;): int&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255, 255, 255); background-color: rgb(25, 24, 48); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #e1efff;&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;color: rgb(158, 255, 255);&quot;&gt;&amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: rgb(250, 208, 0);&quot;&gt;adicionar&lt;/span&gt;&lt;span style=&quot;color: rgb(225, 239, 255);&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: rgb(158, 255, 255);&quot;&gt;usuario&lt;/span&gt;&lt;span style=&quot;color: rgb(225, 239, 255);&quot;&gt;): void&lt;/span&gt;&lt;span style=&quot;color: rgb(158, 255, 255);&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255, 255, 255); background-color: rgb(25, 24, 48); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: rgb(225, 239, 255);&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;color: rgb(158, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(250, 208, 0);&quot;&gt;remover&lt;/span&gt;&lt;span style=&quot;color: rgb(225, 239, 255);&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: rgb(158, 255, 255);&quot;&gt;id&lt;/span&gt;&lt;span style=&quot;color: rgb(225, 239, 255);&quot;&gt;):void&lt;/span&gt;&lt;span style=&quot;color: rgb(158, 255, 255);&quot;&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="21">
+                    <mxGeometry x="10" y="210" width="230" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="(0, n)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="160" width="50" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="(0,1)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="505" y="160" width="50" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

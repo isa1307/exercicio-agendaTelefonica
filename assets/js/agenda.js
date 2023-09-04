@@ -10,11 +10,16 @@ class Usuario {
         this.cidade = cidade;
         this.insta = insta;
         this.git = git;
+        this.id = this.generateId()
         this.age = this.calculatorAge();
         this.signo = this.getZodiacSign();
 
 
     }
+    generateId() {
+        return Math.floor(Math.random() * 10000);
+    }
+   
 
     getZodiacSign() {
         let birthdate = new Date(this.data);
@@ -68,12 +73,18 @@ class Usuario {
 class ListarTelefones {
     constructor() {
         this.listausarios = [];
+
+
     }
+    getContact(id){
+        return this.listausarios.find(usuario => usuario.id == id);
+     }
     adicionar(usuario) {
         this.listausarios.push(usuario);
         let data = usuario.calculatorAge();
-     
-
+    }
+    remover(id) {
+        this.listausarios = this.listausarios.filter(Usuario => Usuario.id !== id);
     }
 
 }
@@ -104,12 +115,13 @@ function adicionar() {
     console.log(git);
 
     verificarInput();
-    aparecerTela();
+  
     const newUsuario = new Usuario(nome, telefone, celular, url, data, email, cep, cidade, insta, git);
-
+   
 
     bibliotecaUsuarios.adicionar(newUsuario);
     console.log(bibliotecaUsuarios);
+    aparecerTela();
 }
 
 
@@ -154,10 +166,13 @@ function aparecerTela() {
 
     bibliotecaUsuarios.listausarios.forEach(usuario => {
         const divTell = `
-        <div class = 'aparecer1' onclick ="aparecerLateral()"> 
-        <h1>${usuario.nome}</h1>
+        <div class = 'aparecer1' onclick ="aparecerLateral(${usuario.id})"> 
+
+        <h3>${usuario.nome}</h3>
+        <p id = "imagem"><img src = "${usuario.url}"/></p>
         <p><strong>telefone:</strong>${separingTellphone(usuario.telefone)}</p>
         <p><strong>celular:</strong> ${separingCellphone(usuario.celular)}</p>
+        <button onclick="remover(${usuario.id})"id = "botaojs">excluir</button>
         </div>`;
         listausarios.innerHTML += divTell;
     });
@@ -198,15 +213,17 @@ function separingCEP(cep) {
     return arrCEP.join("");
 }
 
-function aparecerLateral() {
+function aparecerLateral(id) {
     const listausarios = document.getElementById("aparecer-lado");
-    listausarios.innerHTML = "";
+    let usuario = bibliotecaUsuarios.getContact(id); 
+    listausarios.innerHTML = 
+   ` <div class = 'aparecer2'> 
 
-    bibliotecaUsuarios.listausarios.forEach(usuario => {
-        const divTell2 = `
-    <div class = 'aparecer2'> 
-        <h1>${usuario.nome}</h1>
+        <h4>${usuario.nome}</h4>
+        <p></p>
+        <p id = "imagem"><img src = "${usuario.url}"/></p>
         <p><strong>celular:</strong> ${separingCellphone(usuario.celular)}</p>
+        <p><strong>identificador:</strong> ${usuario.id}</p>
         <p><strong>telefone:</strong>${separingCellphone(usuario.telefone)}</p>
         <p><strong>Data de nascimento:</strong>${dateBr(usuario.data)}</p>
         <p><strong>idade:</strong>${usuario.age}</p>
@@ -216,17 +233,14 @@ function aparecerLateral() {
         <p><strong>cidade:</strong>${usuario.cidade}</p>
 
         <div id=logos>
-        <a target="_blank" href="${abirLink(usuario.insta)}"><i class="fa-brands fa-instagram"></i></a>
-        <a target="_blank" href="${abirLink(usuario.git)}"><i class="fa-brands fa-github"></i></a>
-        <a target="_blank" href="${abirLink(usuario.celular)}"> <i class="fa-brands fa-whatsapp"></i></a>
+        <a target="_blank" href="${abrirLink(usuario.insta)}"><i class="fa-brands fa-instagram"></i></a>
+        <a target="_blank" href="${abrirLinkG(usuario.git)}"><i class="fa-brands fa-github"></i></a>
+        <a target="_blank" href="${abrirLinkW(usuario.celular)}"> <i class="fa-brands fa-whatsapp"></i></a>
         </div>
         
-    </div>`;
+    </div>` ;
 
-   
-       
-    });
-    listausarios.innerHTML += divTell2;
+    
 }
 
 
@@ -252,12 +266,17 @@ function limparInputs() {
     let git = document.getElementById("input-git").value = "";
 }
 
-function abirLink(insta){
+function abrirLink(insta){
     return `https://www.instagram.com/${insta}`
 }
-function abirLinkW(celular){
-    return `https://www.wa.me/55${celular}`
+function abrirLinkW(celular){
+    return `https://wa.me/55${celular}`
 }
-function abirLinkG(git){
+function abrirLinkG(git){
     return `https://github.com/${git}`
+}
+
+function remover(id) {
+    bibliotecaUsuarios.remover(id); // Deve ser 'removerJogo'
+    aparecerTela();
 }
